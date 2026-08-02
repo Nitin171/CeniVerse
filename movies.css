@@ -1,0 +1,74 @@
+/* ==========================================================================
+   movies.html — merged multi-movie page
+   Loaded in addition to style.css. Handles the movie switcher bar and the
+   show/hide behaviour for each embedded .movie-page.
+   ========================================================================== */
+
+/* ---- movie visibility ---- */
+.movie-page{ display:none; }
+.movie-page.active{ display:block; animation:mpFade .35s ease; }
+@keyframes mpFade{ from{opacity:0;} to{opacity:1;} }
+
+/* ---- switcher bar ---- */
+.movie-switcher-wrap{
+  position:sticky;
+  top:var(--header-h);
+  z-index:50;
+  background:rgba(11,11,11,.92);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--border);
+}
+.movie-switcher{
+  display:flex;
+  gap:10px;
+  padding:14px 0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.movie-switcher::-webkit-scrollbar{ display:none; }
+
+.mv-chip{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+  padding:6px 14px 6px 6px;
+  border-radius:100px;
+  border:1px solid var(--border);
+  background:var(--card);
+  transition:border-color .18s ease, background .18s ease, transform .18s ease;
+}
+.mv-chip:hover{ border-color:#3d3d3d; transform:translateY(-1px); }
+.mv-chip.active{
+  border-color:var(--accent);
+  background:rgba(229,9,20,.08);
+}
+.mv-chip-swatch{
+  position:relative;
+  width:34px;height:34px;
+  border-radius:50%;
+  overflow:hidden;
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--border);
+}
+.mv-chip-glyph{
+  position:relative;z-index:1;
+  font-family:var(--font-display);font-weight:800;font-size:13px;
+  color:rgba(255,255,255,.85);
+}
+.mv-chip-meta{ display:flex; flex-direction:column; text-align:left; }
+.mv-chip-title{
+  font-size:12.5px;font-weight:600;color:var(--text-primary);
+  white-space:nowrap;
+}
+.mv-chip-sub{
+  font-size:10.5px;color:var(--text-muted);font-family:var(--font-mono);
+  white-space:nowrap;
+}
+
+@media (max-width:860px){
+  .mv-chip-meta{ display:none; }
+  .mv-chip{ padding:6px; }
+}

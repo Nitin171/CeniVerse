@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Movie Review | CeniVerse</title>
+<meta name="description" id="metaDescription" content="CeniVerse movie review: story, direction, performances, ratings out of 10 for every department, cast &amp; crew, box office, OTT release and full spoiler-free verdict.">
+<script type="application/ld+json" id="movieSchema">{}</script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-movie-slug="">
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 76.53 67.89 A 32 32 0 1 1 76.53 32.11" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+        <path d="M 79.0 37.5 L 82.0 45.87 L 90.89 46.14 L 83.85 51.58 L 86.35 60.11 L 79.0 55.1 L 71.65 60.11 L 74.15 51.58 L 67.11 46.14 L 76.0 45.87 Z" fill="#E50914"/>
+      </svg>
+      <span class="logo-text">Ceni<span class="logo-accent">Verse</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="movie.html" class="active">Movies</a>
+      <a href="index.html#top-rated">Top Rated</a>
+      <a href="index.html#upcoming">Upcoming</a>
+      <a href="index.html#ott">OTT Releases</a>
+      <a href="index.html#news">News</a>
+      <a href="index.html#lists">Lists</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchTrigger" aria-label="Search">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <a href="#" class="btn btn-ghost btn-sm">Log in</a>
+      <a href="#" class="avatar-btn">RS</a>
+      <button class="icon-btn mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobileNav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="index.html#reviews">Reviews</a>
+  <a href="movie.html">Movies</a>
+  <a href="index.html#top-rated">Top Rated</a>
+  <a href="index.html#upcoming">Upcoming</a>
+  <a href="index.html#ott">OTT Releases</a>
+  <a href="index.html#news">News</a>
+</nav>
+
+<div id="searchOverlay">
+  <div style="width:100%;max-width:620px;padding:0 24px;margin:12vh auto 0;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <span class="eyebrow"><span class="dot"></span>Search CeniVerse</span>
+      <button id="searchClose" class="icon-btn" aria-label="Close search">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <input type="text" placeholder="Search movies, actors, directors, languages, years…" style="width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;color:#fff;font-size:16px;font-family:var(--font-body);">
+  </div>
+</div>
+
+<!-- ============================= DETAIL HERO ============================= -->
+<section class="detail-hero">
+  <div class="ph-backdrop detail-backdrop" id="detailBackdrop" data-tone="1"></div>
+  <div class="container detail-hero-inner">
+    <div>
+      <div class="detail-poster ph-poster" id="detailPoster" data-tone="1">
+        <div class="ph-mark">
+          <div class="ph-glyph" id="posterGlyph"></div>
+          <div class="ph-title" id="posterTitle"></div>
+          <div class="ph-industry" id="posterIndustry"></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px;">
+        <button class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;" data-toggle="save">
+          <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 3h12a1 1 0 0 1 1 1v16l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>
+          <span class="save-label">Watchlist</span>
+        </button>
+        <button class="icon-btn" aria-label="Like"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+        <button class="icon-btn" aria-label="Share"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5 15.4 6.5M8.6 13.5l6.8 4"/></svg></button>
+      </div>
+    </div>
+
+    <div>
+      <div class="detail-breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#top-rated" id="breadcrumbLang"></a><span>/</span>
+        <span id="breadcrumbTitle"></span>
+      </div>
+
+      <h1 class="detail-title" id="detailTitle"></h1>
+      <p class="detail-tagline" id="detailTagline"></p>
+
+      <div class="detail-facts" id="detailFacts"></div>
+
+      <div class="hero-rating-row" id="heroRatingRow" style="margin-top:26px;"></div>
+
+      <div class="detail-cta-row">
+        <a href="#tab-review" class="btn btn-accent" id="readFullReviewBtn">Read Full Review</a>
+        <button class="btn" id="trailerCta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Trailer
+        </button>
+        <span style="align-self:center;font-family:var(--font-mono);font-size:12px;color:var(--text-muted);" id="ctaNote"></span>
+      </div>
+
+      <!-- tab bar -->
+      <div class="tabbar">
+        <button class="active" data-tab="overview">Overview</button>
+        <button data-tab="review">Review</button>
+        <button data-tab="ratings">Ratings</button>
+        <button data-tab="cast">Cast &amp; Crew</button>
+        <button data-tab="info">More Info</button>
+        <button data-tab="gallery">Gallery</button>
+        <button data-tab="reviews">Reviews</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TAB CONTENT ============================= -->
+<section class="block" style="padding-top:0;">
+  <div class="container">
+    <div class="detail-layout">
+      <div>
+
+        <!-- ---------- OVERVIEW ---------- -->
+        <div class="tab-panel active" id="tab-overview">
+
+          <div class="verdict-panel">
+            <div class="verdict-big">
+              <div class="vb-tag">Should You Watch?</div>
+              <div class="vb-word" id="verdictWord"></div>
+            </div>
+            <div class="verdict-cols">
+              <div class="verdict-reason" id="verdictReason"></div>
+              <div>
+                <h5 style="color:var(--success);">Who should watch</h5>
+                <ul id="whoWatchList"></ul>
+              </div>
+              <div>
+                <h5 style="color:var(--accent);">Who may skip</h5>
+                <ul id="whoSkipList"></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-section">
+            <h3>Synopsis</h3>
+            <p id="synopsisText"></p>
+          </div>
+
+          <div class="review-section">
+            <h3>Trailer</h3>
+            <div class="trailer-embed ph-poster" data-tone="1" id="trailerCta2">
+              <button class="play-btn" aria-label="Play trailer">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="review-section">
+            <h3>Interesting Facts</h3>
+            <ul id="interestingFactsList" style="padding-left:18px;color:var(--text-secondary);font-size:14px;line-height:2;"></ul>
+          </div>
+        </div>
+
+        <!-- ---------- REVIEW ---------- -->
+        <div class="tab-panel" id="tab-review">
+          <span class="eyebrow"><span class="dot"></span>Spoiler-free review</span>
+
+          <div class="review-section" id="reviewParagraphs"></div>
+
+          <div class="pos-neg-grid">
+            <div class="pn-card pos">
+              <h5>Positives</h5>
+              <ul id="positivesList"></ul>
+            </div>
+            <div class="pn-card neg">
+              <h5>Negatives</h5>
+              <ul id="negativesList"></ul>
+            </div>
+          </div>
+
+          <div class="final-verdict-box">
+            <div class="fv-label">Final Verdict</div>
+            <p id="finalVerdictText"></p>
+          </div>
+        </div>
+
+        <!-- ---------- RATINGS ---------- -->
+        <div class="tab-panel" id="tab-ratings">
+          <div class="overall-rating-hero">
+            <div class="orh-num" id="overallRatingNum"></div>
+            <div class="orh-text">
+              <div class="orh-title">Overall CeniVerse Rating</div>
+              <p>Aggregated from our editorial rubric across 15 weighted departments. Not a crowd-sourced average — every score is assigned deliberately by our review desk.</p>
+            </div>
+          </div>
+
+          <div class="rating-grid">
+            <div id="ratingsColLeft"></div>
+            <div id="ratingsColRight"></div>
+          </div>
+        </div>
+
+        <!-- ---------- CAST & CREW ---------- -->
+        <div class="tab-panel" id="tab-cast">
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin-bottom:20px;">Cast</h3>
+          <div class="cast-grid" id="castGrid"></div>
+
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin:36px 0 20px;">Crew</h3>
+          <div class="crew-grid" id="crewGrid"></div>
+        </div>
+
+        <!-- ---------- MORE INFO ---------- -->
+        <div class="tab-panel" id="tab-info">
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin-bottom:14px;">Production &amp; Trivia</h3>
+          <p style="font-size:14px;color:var(--text-secondary);line-height:1.85;" id="productionTrivia"></p>
+
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin:32px 0 14px;">Soundtrack</h3>
+          <div class="crew-grid" id="soundtrackGrid"></div>
+
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin:32px 0 14px;">Timeline</h3>
+          <div class="timeline" id="timelineList"></div>
+
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin:32px 0 14px;">FAQs</h3>
+          <div id="faqsList"></div>
+
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin:32px 0 18px;">Similar Movies</h3>
+          <div class="grid-4" id="similarMoviesGrid"></div>
+        </div>
+
+        <!-- ---------- GALLERY ---------- -->
+        <div class="tab-panel" id="tab-gallery">
+          <div class="gallery-grid" id="galleryGrid"></div>
+
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:20px;margin:36px 0 18px;">Awards</h3>
+          <div class="crew-grid" id="awardsGrid"></div>
+        </div>
+
+        <!-- ---------- REVIEWS ---------- -->
+        <div class="tab-panel" id="tab-reviews">
+
+          <div class="section-head" style="margin-bottom:28px;">
+            <div>
+              <span class="eyebrow"><span class="dot"></span><span id="reviewCountLabel">— ratings</span></span>
+              <h2 style="font-size:22px;margin-top:6px;">Reviewer Opinions</h2>
+            </div>
+            <span class="see-all" style="font-size:11.5px;">Sorted by most helpful</span>
+          </div>
+
+          <!-- ---- add your review ---- -->
+          <div class="write-review-card">
+            <h4>Add Your Review</h4>
+            <div class="wr-disclaimer">
+              <b>Before you post:</b> give your honest, constructive opinion. If you loved it, say so — and tell us what worked. If you didn't like it, that's fine too — just explain your reasoning so other readers can trust your take. Please keep it spoiler-free.
+            </div>
+
+            <span class="wr-label">Your name</span>
+            <input type="text" id="reviewName" class="wr-input" placeholder="How should we credit you?" maxlength="40">
+
+            <span class="wr-label">Your rating</span>
+            <div class="wr-stars-input" id="starInput" aria-label="Rate this movie">
+              <span data-star="1">★</span><span data-star="2">★</span><span data-star="3">★</span><span data-star="4">★</span><span data-star="5">★</span>
+            </div>
+
+            <span class="wr-label">Your verdict</span>
+            <div class="wr-verdict-row" id="verdictChips">
+              <button type="button" class="wr-chip love" data-verdict="love">Loved it</button>
+              <button type="button" class="wr-chip okay" data-verdict="okay">It was okay</button>
+              <button type="button" class="wr-chip skip" data-verdict="skip">Didn't like it</button>
+            </div>
+
+            <span class="wr-label">Your review</span>
+            <textarea rows="5" id="reviewText" placeholder="Tell us why — what worked, what didn't, and who you'd recommend this to…"></textarea>
+
+            <div class="wr-error" id="reviewError" hidden></div>
+
+            <button class="btn btn-accent" id="postReviewBtn" style="width:100%;justify-content:center;margin-top:14px;">
+              <span id="postReviewBtnLabel">Post Review</span>
+            </button>
+            <div class="wr-success" id="reviewSuccess" hidden>
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M20 6 9 17l-5-5"/></svg>
+              Your review is live — thank you for keeping it honest.
+            </div>
+          </div>
+
+          <!-- ---- dynamic reviewer feed (rendered by script.js) ---- -->
+          <div class="reviewer-feed" id="reviewerFeed" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+      <!-- ============================= SIDEBAR ============================= -->
+      <aside>
+        <div class="side-card">
+          <h4>Movie Info</h4>
+          <div id="sidebarMovieInfo"></div>
+        </div>
+
+        <div class="side-card">
+          <h4>Quick Verdict</h4>
+          <div class="verdict-big" style="margin-bottom:14px;">
+            <div class="vb-tag">Recommendation</div>
+            <div class="vb-word" id="sidebarVerdictWord"></div>
+          </div>
+          <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;" id="sidebarQuickNote"></p>
+        </div>
+
+        <div class="side-card">
+          <h4>Where to Watch</h4>
+          <div id="whereToWatchRows"></div>
+        </div>
+
+        <div class="side-card">
+          <h4>You may also like</h4>
+          <div style="display:flex;flex-direction:column;gap:14px;" id="alsoLikeList"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-logo">
+          <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 76.53 67.89 A 32 32 0 1 1 76.53 32.11" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+        <path d="M 79.0 37.5 L 82.0 45.87 L 90.89 46.14 L 83.85 51.58 L 86.35 60.11 L 79.0 55.1 L 71.65 60.11 L 74.15 51.58 L 67.11 46.14 L 76.0 45.87 Z" fill="#E50914"/>
+      </svg>
+          <span class="logo-text">Ceni<span class="logo-accent">Verse</span></span>
+        </div>
+        <p class="foot-desc">India's platform for honest, unbiased, constructive movie reviews — built for audiences and filmmakers alike.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="index.html#reviews">Reviews</a></li><li><a href="movie.html">Movies</a></li><li><a href="index.html#top-rated">Top Rated</a></li></ul>
+      </div>
+      <div>
+        <h4>Industries</h4>
+        <ul><li><a href="#">Telugu</a></li><li><a href="#">Tamil</a></li><li><a href="#">Hindi</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="index.html#about">About</a></li><li><a href="#">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Stay in the loop</h4>
+        <div class="news-form"><input type="email" placeholder="you@email.com"><button class="btn btn-accent btn-sm">Subscribe</button></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CeniVerse. All reviews reflect editorial opinion, not sponsor influence.</span>
+      <div class="legal-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="movies.js"></script>
+<script src="script.js"></script>
+<script>
+  document.getElementById('trailerCta')?.addEventListener('click', () => {
+    document.getElementById('trailerCta2').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>
